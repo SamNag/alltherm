@@ -1,0 +1,85 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Custom gradient animation for text */
+.animated-gradient-text {
+    background: linear-gradient(90deg, #F3D3BD, #B2DDF7, #F3D3BD);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 4s ease infinite;
+    display: inline-block; /* Essential for background-clip to work well */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* FAQ accordion icon rotation */
+.faq-item summary::marker {
+    display: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary span {
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary span {
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    overflow: hidden;
+    height: 0;
+}
+
+#main-header.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.animated-border {
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #F3D3BD, #B2DDF7, #F3D3BD);
+    background-size: 300% 300%;
+    animation: gradient-flow 6s ease infinite;
+}
+
+
+.border-top-animated::before {
+    top: 0;
+    bottom: auto;
+}
+
+
+.border-bottom-animated::before {
+    bottom: 0;
+    top: auto;
+}
